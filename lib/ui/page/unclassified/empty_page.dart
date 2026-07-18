@@ -13,8 +13,7 @@ class EmptyPage extends StatelessWidget {
           style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
         ),
       ),
-      body: Center(
-      ),
+      body: Center(),
     );
   }
 }

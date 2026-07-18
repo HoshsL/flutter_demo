@@ -28,14 +28,13 @@ class _FormPageState extends State<FormPage> {
       body: Center(
         child: Form(
           key: _formKey,
-          canPop: false,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           child: Column(
             children: [
               TextFormField(
                 autofocus: true,
                 controller: _usernameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: '用户名',
                   hintText: '用户名或邮箱',
                   icon: Icon(Icons.person),
@@ -48,13 +47,13 @@ class _FormPageState extends State<FormPage> {
               ),
               TextFormField(
                 controller: _pwdController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: '密码',
                   hintText: '您的登录密码',
                   icon: Icon(Icons.lock),
                 ),
                 obscureText: true,
-                //校验密码
+                // 校验密码
                 validator: (v) {
                   return v!.trim().length > 5 ? null : '密码不能少于6位';
                 },
@@ -67,21 +66,21 @@ class _FormPageState extends State<FormPage> {
                   children: [
                     Expanded(
                       child: ElevatedButton(
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
+                        child: const Padding(
+                          padding: EdgeInsets.all(16.0),
                           child: Text('登录'),
                         ),
                         onPressed: () {
-                          // 通过_formKey.currentState 获取FormState后，
-                          // 调用validate()方法校验用户名密码是否合法，
-                          // 校验通过后再提交数据。
+                          // 通过_formKey.currentState 获取FormState
+                          // 调用validate()方法校验用户名密码是否合法
+                          // 校验通过后再进行其他操作
                           if ((_formKey.currentState as FormState).validate()) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text(
                                   '您好${_usernameController.text}，您的密码是${_pwdController.text}',
                                 ),
-                                duration: Duration(seconds: 1),
+                                duration: const Duration(seconds: 1),
                               ),
                             );
                           }

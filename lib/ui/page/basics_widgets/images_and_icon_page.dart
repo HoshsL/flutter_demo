@@ -14,7 +14,7 @@ class ImagesAndIconPage extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(12.0),
         child: Column(
           spacing: 12.0,
           children: [
@@ -24,7 +24,7 @@ class ImagesAndIconPage extends StatelessWidget {
               children: [
                 Image.asset('assets/images/isdu.png', width: 50.0),
 
-                //网络加载图片
+                // 从网络加载图片
                 Image.network(
                   'https://i.sdu.edu.cn/img/ic_launcher.png',
                   width: 50.0,
@@ -42,7 +42,7 @@ class ImagesAndIconPage extends StatelessWidget {
                   height: 40.0,
                   fit: BoxFit.contain,
                 ),
-                Text('BoxFit.contain'),
+                const Text('BoxFit.contain'),
               ],
             ),
             Row(
@@ -54,7 +54,7 @@ class ImagesAndIconPage extends StatelessWidget {
                   height: 40.0,
                   fit: BoxFit.cover,
                 ),
-                Text('BoxFit.cover'),
+                const Text('BoxFit.cover'),
               ],
             ),
             Row(
@@ -66,7 +66,7 @@ class ImagesAndIconPage extends StatelessWidget {
                   height: 40.0,
                   fit: BoxFit.fill,
                 ),
-                Text('BoxFit.fill'),
+                const Text('BoxFit.fill'),
               ],
             ),
             Row(
@@ -78,7 +78,7 @@ class ImagesAndIconPage extends StatelessWidget {
                   height: 40.0,
                   fit: BoxFit.fitHeight,
                 ),
-                Text('BoxFit.fitHeight'),
+                const Text('BoxFit.fitHeight'),
               ],
             ),
             Row(
@@ -90,7 +90,7 @@ class ImagesAndIconPage extends StatelessWidget {
                   height: 40.0,
                   fit: BoxFit.fitWidth,
                 ),
-                Text('BoxFit.fitWidth'),
+                const Text('BoxFit.fitWidth'),
               ],
             ),
             Row(
@@ -102,7 +102,7 @@ class ImagesAndIconPage extends StatelessWidget {
                   height: 40.0,
                   fit: BoxFit.none,
                 ),
-                Text('BoxFit.none'),
+                const Text('BoxFit.none'),
               ],
             ),
             Row(
@@ -114,7 +114,7 @@ class ImagesAndIconPage extends StatelessWidget {
                   height: 40.0,
                   fit: BoxFit.scaleDown,
                 ),
-                Text('BoxFit.scaleDown'),
+                const Text('BoxFit.scaleDown'),
               ],
             ),
 
@@ -144,7 +144,7 @@ class ImagesAndIconPage extends StatelessWidget {
                 ),
                 Icon(
                   Icons.fitness_center,
-                  color: Theme.of(context).colorScheme.primary
+                  color: Theme.of(context).colorScheme.primary,
                 ),
                 Icon(
                   Icons.campaign,

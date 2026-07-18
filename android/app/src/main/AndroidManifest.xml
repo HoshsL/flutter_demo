@@ -21,7 +21,7 @@
     </queries>
 
     <application
-        android:label="flutter_demo"
+        android:label="Flutter Demo"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/ui/page/home_page.dart';
+import 'package:flutter_demo/utils/sp_utils.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // 初始化shared_preferences工具类
+  await SPUtils.init();
   runApp(const MainApp());
 }
 

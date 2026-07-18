@@ -1,10 +1,18 @@
+import 'package:fading_edge_scrollview/fading_edge_scrollview.dart';
 import 'package:flutter/material.dart';
 
-class DemoCard extends StatelessWidget {
+class DemoCard extends StatefulWidget {
   const DemoCard({super.key, required this.cardTitle, required this.children});
 
   final String cardTitle;
   final List<Widget> children;
+
+  @override
+  State<DemoCard> createState() => DemoCardState();
+}
+
+class DemoCardState extends State<DemoCard> {
+  final _controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +27,12 @@ class DemoCard extends StatelessWidget {
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 20,
-            offset: Offset(0, 10),
+            offset: const Offset(0, 10),
             spreadRadius: 0,
           ),
         ],
       ),
-      margin: EdgeInsets.all(10.0),
+      margin: const EdgeInsets.all(10.0),
       child: Padding(
         //上下留空
         padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -35,8 +43,8 @@ class DemoCard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 20.0, bottom: 12.0),
               child: Text(
-                cardTitle,
-                style: TextStyle(
+                widget.cardTitle,
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Color(0xFF9E9E9E),
@@ -46,16 +54,19 @@ class DemoCard extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: ListView.builder(
-                physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.zero,
-                itemCount: children.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                    child: children[index],
-                  );
-                },
+              child: FadingEdgeScrollView.fromScrollView(
+                child: ListView.builder(
+                  controller: _controller,
+                  padding: const EdgeInsets.symmetric(vertical: 6.0),
+                  physics: const BouncingScrollPhysics(),
+                  itemCount: widget.children.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      child: widget.children[index],
+                    );
+                  },
+                ),
               ),
             ),
           ],

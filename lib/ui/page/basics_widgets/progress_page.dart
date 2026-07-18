@@ -15,7 +15,7 @@ class _ProgressPageState extends State<ProgressPage>
   void initState() {
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
     );
     _animationController.addListener(() => setState(() => {}));
     super.initState();
@@ -38,7 +38,7 @@ class _ProgressPageState extends State<ProgressPage>
         ),
       ),
       body: Padding(
-        padding: EdgeInsetsGeometry.all(12.0),
+        padding: const EdgeInsetsGeometry.all(12.0),
         child: Column(
           spacing: 24.0,
           children: [
@@ -118,7 +118,7 @@ class _ProgressPageState extends State<ProgressPage>
                 _animationController.reset();
                 _animationController.forward();
               },
-              child: Text('播放动画'),
+              child: const Text('播放动画'),
             ),
           ],
         ),

@@ -10,6 +10,7 @@ class SwitchAndCheckboxPage extends StatefulWidget {
 class _SwitchAndCheckboxPageState extends State<SwitchAndCheckboxPage> {
   bool _switchSelected = true;
   bool _checkboxSelected = true;
+  bool? _checkboxBSelected = true;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class _SwitchAndCheckboxPageState extends State<SwitchAndCheckboxPage> {
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsetsGeometry.only(top: 12.0),
+          padding: const EdgeInsetsGeometry.only(top: 12.0),
           child: Column(
             spacing: 24.0,
             children: [
@@ -35,12 +36,32 @@ class _SwitchAndCheckboxPageState extends State<SwitchAndCheckboxPage> {
                   });
                 },
               ),
+
+              // 默认带两种状态的Checkbox
               Checkbox(
                 value: _checkboxSelected,
                 activeColor: Colors.blueGrey,
                 onChanged: (value) {
                   setState(() {
                     _checkboxSelected = value!;
+                  });
+                },
+              ),
+
+              // 带三种状态的Checkbox
+              Checkbox(
+                value: _checkboxBSelected,
+                activeColor: Colors.deepPurple,
+                tristate: true,
+                onChanged: (value) {
+                  setState(() {
+                    if (_checkboxBSelected == true) {
+                      _checkboxBSelected = null;
+                    } else if (_checkboxBSelected == null) {
+                      _checkboxBSelected = false;
+                    } else {
+                      _checkboxBSelected = true;
+                    }
                   });
                 },
               ),

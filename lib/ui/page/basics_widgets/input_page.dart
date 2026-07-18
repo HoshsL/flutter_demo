@@ -17,10 +17,10 @@ class _InputPageStaet extends State<InputPage> {
   @override
   void initState() {
     _pwdController.addListener(() {
-      print('新的密码是${_pwdController.text}');
+      debugPrint('新的密码是${_pwdController.text}');
     });
     _usernameFocusNode.addListener(() {
-      print(_usernameFocusNode.hasFocus ? '用户名框获得焦点' : '用户名框失去焦点');
+      debugPrint(_usernameFocusNode.hasFocus ? '用户名框获得焦点' : '用户名框失去焦点');
     });
     super.initState();
   }
@@ -43,9 +43,9 @@ class _InputPageStaet extends State<InputPage> {
             focusNode: _usernameFocusNode,
             // 这里分别用两种形式演示实现监听文本变化
             onChanged: (value) {
-              print('新的用户名是$value');
+              debugPrint('新的用户名是$value');
             },
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: '用户名',
               hintText: '用户名或邮箱',
               prefixIcon: Icon(Icons.person),
@@ -54,7 +54,7 @@ class _InputPageStaet extends State<InputPage> {
           TextField(
             controller: _pwdController,
             focusNode: _pwdFocusNode,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: '密码',
               hintText: '您的登陆密码',
               prefixIcon: Icon(Icons.lock),
@@ -71,7 +71,7 @@ class _InputPageStaet extends State<InputPage> {
                       content: Text(
                         '您好${_usernameController.text}，您的密码是${_pwdController.text}',
                       ),
-                      duration: Duration(seconds: 1),
+                      duration: const Duration(seconds: 1),
                     ),
                   );
                 },
@@ -86,7 +86,7 @@ class _InputPageStaet extends State<InputPage> {
                     extentOffset: _usernameController.text.length,
                   );
                 },
-                child: Text('填充用户名并选中前三个之后的字符'),
+                child: const Text('填充用户名并选中前三个之后的字符'),
               ),
               ElevatedButton(
                 onPressed: () {
@@ -96,14 +96,14 @@ class _InputPageStaet extends State<InputPage> {
                     FocusScope.of(context).requestFocus(_usernameFocusNode);
                   }
                 },
-                child: Text('移动焦点'),
+                child: const Text('移动焦点'),
               ),
               ElevatedButton(
                 onPressed: () {
                   _usernameFocusNode.unfocus();
                   _pwdFocusNode.unfocus();
                 },
-                child: Text('隐藏键盘'),
+                child: const Text('隐藏键盘'),
               ),
             ],
           ),

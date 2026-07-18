@@ -47,3 +47,5 @@ lib
 | 输入框 | 基础组件 | input_page.dart | 困难 |
 | 表单 | 基础组件 | form_page.dart | 困难 |
 | 进度 | 基础组件 | progress_page.dart | 普通 |
+| 填充 | 容器类组件 | padding_page.dart | 简单 |
+| 容器 Container | 容器类组件 | container_page.dart | 普通 |

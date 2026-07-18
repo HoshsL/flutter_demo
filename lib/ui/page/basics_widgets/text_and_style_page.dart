@@ -21,14 +21,14 @@ class _TextAndStylePageState extends State<TextAndStylePage> {
       if (await canLaunchUrl(url)) {
         await launchUrl(url, mode: LaunchMode.externalApplication);
       } else {
-        print('无法处理此 URL: $url');
+        debugPrint('无法处理此 URL: $url');
       }
     };
   }
 
   @override
   void dispose() {
-    // 在Widget销毁时，务必释放资源
+    // 在Widget销毁时，释放资源
     _uriRecognizer.dispose();
     super.dispose();
   }
@@ -47,10 +47,10 @@ class _TextAndStylePageState extends State<TextAndStylePage> {
         spacing: 12.0,
         children: [
           // 普通文本
-          Text("Hello World!"),
+          const Text("Hello World!"),
 
           // 通过比例放大的文本
-          Text("Hello World!", textScaler: TextScaler.linear(1.5)),
+          const Text("Hello World!", textScaler: TextScaler.linear(1.5)),
 
           // 固定行数，多余部分省略的文本
           Text(
@@ -60,7 +60,7 @@ class _TextAndStylePageState extends State<TextAndStylePage> {
           ),
 
           // 通过TextStyle设置复杂样式文本
-          Text(
+          const Text(
             "Hello World!",
             style: TextStyle(
               color: Colors.blueAccent,
@@ -76,10 +76,10 @@ class _TextAndStylePageState extends State<TextAndStylePage> {
           Text.rich(
             TextSpan(
               children: [
-                TextSpan(text: "学生在线"),
+                const TextSpan(text: "学生在线"),
                 TextSpan(
                   text: "https://online.sdu.edu.cn/",
-                  style: TextStyle(color: Colors.blue),
+                  style: const TextStyle(color: Colors.blue),
                   recognizer: _uriRecognizer,
                 ),
               ],
@@ -87,7 +87,7 @@ class _TextAndStylePageState extends State<TextAndStylePage> {
           ),
 
           // DefaultTextStyle设置默认文本格式
-          DefaultTextStyle(
+          const DefaultTextStyle(
             style: TextStyle(color: Colors.redAccent, fontSize: 20.0),
             child: Column(
               children: [

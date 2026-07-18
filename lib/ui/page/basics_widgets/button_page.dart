@@ -15,7 +15,7 @@ class ButtonPage extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsetsGeometry.only(top: 12.0),
+          padding: const EdgeInsetsGeometry.only(top: 12.0),
           child: Column(
             spacing: 12.0,
             children: [
@@ -23,8 +23,8 @@ class ButtonPage extends StatelessWidget {
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('按下了ElevatedButton'),
-                      duration: Duration(seconds: 1),
+                      content: const Text('按下了ElevatedButton'),
+                      duration: const Duration(seconds: 1),
                     ),
                   );
                 },
@@ -34,8 +34,8 @@ class ButtonPage extends StatelessWidget {
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('按下了TextButton'),
-                      duration: Duration(seconds: 1),
+                      content: const Text('按下了TextButton'),
+                      duration: const Duration(seconds: 1),
                     ),
                   );
                 },
@@ -45,8 +45,8 @@ class ButtonPage extends StatelessWidget {
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('按下了OutlinedButton'),
-                      duration: Duration(seconds: 1),
+                      content: const Text('按下了OutlinedButton'),
+                      duration: const Duration(seconds: 1),
                     ),
                   );
                 },
@@ -56,45 +56,45 @@ class ButtonPage extends StatelessWidget {
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('按下了TextButton'),
-                      duration: Duration(seconds: 1),
+                      content: const Text('按下了TextButton'),
+                      duration: const Duration(seconds: 1),
                     ),
                   );
                 },
                 icon: Icon(Icons.thumb_up),
               ),
               ElevatedButton.icon(
-                icon: Icon(Icons.send),
-                label: Text("发送"),
+                icon: const Icon(Icons.send),
+                label: const Text("发送"),
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('按下了发送按钮'),
-                      duration: Duration(seconds: 1),
+                      content: const Text('按下了发送按钮'),
+                      duration: const Duration(seconds: 1),
                     ),
                   );
                 },
               ),
               OutlinedButton.icon(
-                icon: Icon(Icons.add),
-                label: Text("添加"),
+                icon: const Icon(Icons.add),
+                label: const Text("添加"),
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('按下了添加按钮'),
-                      duration: Duration(seconds: 1),
+                      content: const Text('按下了添加按钮'),
+                      duration: const Duration(seconds: 1),
                     ),
                   );
                 },
               ),
               TextButton.icon(
-                icon: Icon(Icons.info),
-                label: Text("详情"),
+                icon: const Icon(Icons.info),
+                label: const Text("详情"),
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('按下了详情按钮'),
-                      duration: Duration(seconds: 1),
+                      content: const Text('按下了详情按钮'),
+                      duration: const Duration(seconds: 1),
                     ),
                   );
                 },

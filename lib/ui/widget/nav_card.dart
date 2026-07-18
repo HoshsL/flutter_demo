@@ -18,12 +18,14 @@ class NavCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // 设置外边距，只指定上下边距
-      margin: EdgeInsets.only(top: 8, bottom: 8),
+      margin: const EdgeInsets.symmetric(vertical: 8.0),
       width: MediaQuery.of(context).size.width * 0.7,
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
+
         // 设置圆角
         borderRadius: BorderRadius.circular(12.0),
+
         // 设置阴影
         boxShadow: [
           BoxShadow(
@@ -37,15 +39,20 @@ class NavCard extends StatelessWidget {
           ),
         ],
       ),
+
       // 点击事件监听
       child: GestureDetector(
-        //单击
+        // 默认参数会导致点击空白处不响应，这里改为拦截
+        behavior: HitTestBehavior.opaque,
+
+        // 单击
         onTap: () {
           Navigator.of(
             context,
           ).push(MaterialPageRoute(builder: (context) => destination));
         },
-        //长按
+
+        // 长按
         onLongPress: () {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
@@ -55,11 +62,12 @@ class NavCard extends StatelessWidget {
           );
         },
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Row(
             children: [
+              // 左侧色条
               Container(
-                width: 4, // 色条宽度
+                width: 4,
                 height: 30,
                 decoration: BoxDecoration(color: markColor),
               ),
@@ -74,8 +82,8 @@ class NavCard extends StatelessWidget {
                       Text(title),
                       Text(
                         category,
-                        textScaler: TextScaler.linear(0.75),
-                        style: TextStyle(color: Colors.grey),
+                        textScaler: const TextScaler.linear(0.75),
+                        style: const TextStyle(color: Colors.grey),
                       ),
                     ],
                   ),

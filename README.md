@@ -43,7 +43,7 @@ lib
 | 文本与样式 | 基础组件 | text_and_style_page.dart | 简单 |
 | 按钮 | 基础组件 | button_page.dart | 简单 |
 | 图片与ICON | 基础组件 | images_and_icon_page.dart | 普通 |
-| 开关与复选框 | 基础组件 | single_choice_and_checkbox_page.dart | 普通 |
+| 开关与复选框 | 基础组件 | switch_and_checkbox_page.dart | 普通 |
 | 输入框 | 基础组件 | input_page.dart | 困难 |
 | 表单 | 基础组件 | form_page.dart | 困难 |
 | 进度条 | 基础组件 | progress_page.dart | 普通 |

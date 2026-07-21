@@ -33,31 +33,35 @@ class _RequestBaiduPageState extends State<RequestBaiduPage> {
           style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
         ),
       ),
-      body: Center(
-        // 还记得这个组件吗，因为HTML很长，我们需要滚动才能显示完全
-        child: SingleChildScrollView(
-          child: FutureBuilder(
-            // 我们的Future对象在这里派上用场
-            // FutureBuilder的future属性接受一个Future类型，我们的_res刚好是Future类型，直接传进去
-            future: _res,
+      body: Scrollbar(
+        // 显示进度条
+        child: Center(
+          // 还记得这个组件吗，因为HTML很长，我们需要滚动才能显示完全
+          child: SingleChildScrollView(
+            padding: EdgeInsets.all(16.0),
+            child: FutureBuilder(
+              // 我们的Future对象在这里派上用场
+              // FutureBuilder的future属性接受一个Future类型，我们的_res刚好是Future类型，直接传进去
+              future: _res,
 
-            builder: (context, snapshot) {
-              // 我们需要在builder中返回我们想展示的组件
-              // builder的两个参数第一个不用多说，就是一个BuildContext
-              // 第二个参数是我们先前传进去的Future对象的信息
+              builder: (context, snapshot) {
+                // 我们需要在builder中返回我们想展示的组件
+                // builder的两个参数第一个不用多说，就是一个BuildContext
+                // 第二个参数是我们先前传进去的Future对象的信息
 
-              // 比如下面的if语句
-              // snapshot.connectionState储存了当前Future的执行状态
-              // 如果执行完了就会等于ConnectionState.done
-              // 我们这里判断是否执行完毕，如果没有就显示一个加载动画
-              if (snapshot.connectionState != ConnectionState.done) {
-                return CircularProgressIndicator();
-              } else {
-                // 执行完了，我们就可以通过snapshot.data来获取Future中的数据了
-                // 后面那个data是Response的属性，存储着服务器端发来的数据，在此处就是一个HTML
-                return Text(snapshot.data!.data);
-              }
-            },
+                // 比如下面的if语句
+                // snapshot.connectionState储存了当前Future的执行状态
+                // 如果执行完了就会等于ConnectionState.done
+                // 我们这里判断是否执行完毕，如果没有就显示一个加载动画
+                if (snapshot.connectionState != ConnectionState.done) {
+                  return CircularProgressIndicator();
+                } else {
+                  // 执行完了，我们就可以通过snapshot.data来获取Future中的数据了
+                  // 后面那个data是Response的属性，存储着服务器端发来的数据，在此处就是一个HTML
+                  return Text(snapshot.data!.data);
+                }
+              },
+            ),
           ),
         ),
       ),

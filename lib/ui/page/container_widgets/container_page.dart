@@ -13,60 +13,63 @@ class ContainerPage extends StatelessWidget {
           style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
         ),
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Padding 与 Margin 对比
-            const Text(
-              'Padding (内边距) 与 Margin (外边距)对比:',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-            Wrap(
-              alignment: WrapAlignment.center,
-              children: [
-                // 无 Padding 和 Margin
-                _buildExampleBox(
-                  label: '无 Padding/Margin',
-                  containerColor: Colors.grey.shade200,
-                  padding: 0,
-                  margin: 0,
-                ),
-                // 有 Padding
-                _buildExampleBox(
-                  label: '有 Padding',
-                  containerColor: Colors.lightGreen.shade200,
-                  padding: 16,
-                  margin: 0,
-                ),
-                // 有 Margin
-                _buildExampleBox(
-                  label: '有 Margin',
-                  containerColor: Colors.lightBlue.shade200,
-                  padding: 0,
-                  margin: 16,
-                ),
-                // 有 Padding 和 Margin
-                _buildExampleBox(
-                  label: '同时有 Padding 和 Margin',
-                  containerColor: Colors.orange.shade200,
-                  padding: 8,
-                  margin: 16,
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
+      body: Scrollbar(
+        // 显示进度条
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Padding 与 Margin 对比
+              const Text(
+                'Padding (内边距) 与 Margin (外边距)对比:',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              Wrap(
+                alignment: WrapAlignment.center,
+                children: [
+                  // 无 Padding 和 Margin
+                  _buildExampleBox(
+                    label: '无 Padding/Margin',
+                    containerColor: Colors.grey.shade200,
+                    padding: 0,
+                    margin: 0,
+                  ),
+                  // 有 Padding
+                  _buildExampleBox(
+                    label: '有 Padding',
+                    containerColor: Colors.lightGreen.shade200,
+                    padding: 16,
+                    margin: 0,
+                  ),
+                  // 有 Margin
+                  _buildExampleBox(
+                    label: '有 Margin',
+                    containerColor: Colors.lightBlue.shade200,
+                    padding: 0,
+                    margin: 16,
+                  ),
+                  // 有 Padding 和 Margin
+                  _buildExampleBox(
+                    label: '同时有 Padding 和 Margin',
+                    containerColor: Colors.orange.shade200,
+                    padding: 8,
+                    margin: 16,
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
 
-            // 综合应用示例
-            const Text(
-              '综合应用示例:',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-            NeonBox(),
-          ],
+              // 综合应用示例
+              const Text(
+                '综合应用示例:',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              NeonBox(),
+            ],
+          ),
         ),
       ),
     );

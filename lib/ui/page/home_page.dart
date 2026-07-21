@@ -9,8 +9,16 @@ import 'package:flutter_demo/ui/page/basics_widgets/switch_and_checkbox_page.dar
 import 'package:flutter_demo/ui/page/basics_widgets/text_and_style_page.dart';
 import 'package:flutter_demo/ui/page/container_widgets/container_page.dart';
 import 'package:flutter_demo/ui/page/container_widgets/padding_page.dart';
+import 'package:flutter_demo/ui/page/layout_widgets/align_page.dart';
+import 'package:flutter_demo/ui/page/layout_widgets/flex_page.dart';
+import 'package:flutter_demo/ui/page/layout_widgets/row_column_page.dart';
+import 'package:flutter_demo/ui/page/layout_widgets/stack_page.dart';
+import 'package:flutter_demo/ui/page/layout_widgets/wrap_page.dart';
+import 'package:flutter_demo/ui/page/scrollable_widgets/list_view_page.dart';
+import 'package:flutter_demo/ui/page/scrollable_widgets/list_view_separated_page.dart';
+import 'package:flutter_demo/ui/page/scrollable_widgets/single_child_scroll_view_page.dart';
 import 'package:flutter_demo/ui/page/unclassified/empty_page.dart';
-import 'package:flutter_demo/ui/page/unclassified/list_view_build_page.dart';
+import 'package:flutter_demo/ui/page/scrollable_widgets/list_view_builder_page.dart';
 import 'package:flutter_demo/ui/page/unclassified/page_return_data_page_a.dart';
 import 'package:flutter_demo/ui/page/unclassified/request_baidu_page.dart';
 import 'package:flutter_demo/ui/widget/counter.dart';
@@ -82,6 +90,36 @@ class HomePage extends StatelessWidget {
                       category: ExampleCategory.basics.label,
                     ),
                     NavCard(
+                      title: '线性布局',
+                      destination: RowColumnPage(),
+                      markColor: Colors.deepPurple.shade200,
+                      category: ExampleCategory.layout.label,
+                    ),
+                    NavCard(
+                      title: '弹性布局',
+                      destination: FlexPage(),
+                      markColor: Colors.deepPurple.shade400,
+                      category: ExampleCategory.layout.label,
+                    ),
+                    NavCard(
+                      title: '流式布局',
+                      destination: WrapPage(),
+                      markColor: Colors.deepPurple.shade400,
+                      category: ExampleCategory.layout.label,
+                    ),
+                    NavCard(
+                      title: '层叠布局',
+                      destination: StackPage(),
+                      markColor: Colors.deepPurple.shade800,
+                      category: ExampleCategory.layout.label,
+                    ),
+                    NavCard(
+                      title: '对齐与相对定位',
+                      destination: AlignPage(),
+                      markColor: Colors.deepPurple.shade400,
+                      category: ExampleCategory.layout.label,
+                    ),
+                    NavCard(
                       title: '填充',
                       destination: PaddingPage(),
                       markColor: Colors.deepPurple.shade200,
@@ -94,13 +132,32 @@ class HomePage extends StatelessWidget {
                       category: ExampleCategory.container.label,
                     ),
                     NavCard(
-                      title: '空白页',
-                      destination: EmptyPage(),
-                      markColor: Colors.blueGrey.shade300,
+                      title: 'SingleChildScrollView',
+                      destination: SingleChildScrollViewPage(),
+                      markColor: Colors.deepPurple.shade200,
+                      category: ExampleCategory.scrollable.label,
                     ),
                     NavCard(
-                      title: '列表',
-                      destination: ListViewBuildPage(),
+                      title: 'ListView',
+                      destination: ListViewPage(),
+                      markColor: Colors.deepPurple.shade400,
+                      category: ExampleCategory.scrollable.label,
+                    ),
+                    NavCard(
+                      title: 'ListView.builder',
+                      destination: ListViewBuilderPage(),
+                      markColor: Colors.deepPurple.shade400,
+                      category: ExampleCategory.scrollable.label,
+                    ),
+                    NavCard(
+                      title: 'ListView.separated',
+                      destination: ListViewSeparatedPage(),
+                      markColor: Colors.deepPurple.shade400,
+                      category: ExampleCategory.scrollable.label,
+                    ),
+                    NavCard(
+                      title: '空白页',
+                      destination: EmptyPage(),
                       markColor: Colors.blueGrey.shade300,
                     ),
                     NavCard(

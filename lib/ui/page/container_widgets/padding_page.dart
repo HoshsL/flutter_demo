@@ -62,37 +62,40 @@ class PaddingPage extends StatelessWidget {
     required EdgeInsetsGeometry padding,
     required Color color,
   }) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(label, style: const TextStyle(fontWeight: FontWeight.bold)),
-          const SizedBox(height: 6),
-          Container(
-            // 灰色边框为 Padding Widget 的边界
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey, width: 1.5),
-            ),
-            child: Padding(
-              padding: padding,
-              child: Container(
-                width: double.infinity,
-                height: 60,
-                alignment: Alignment.center,
-                color: color.withValues(alpha: 0.3),
-                child: Text(
-                  'child',
-                  style: TextStyle(
-                    color: color,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
+    return Scrollbar(
+      // 显示进度条
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(label, style: const TextStyle(fontWeight: FontWeight.bold)),
+            const SizedBox(height: 6),
+            Container(
+              // 灰色边框为 Padding Widget 的边界
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey, width: 1.5),
+              ),
+              child: Padding(
+                padding: padding,
+                child: Container(
+                  width: double.infinity,
+                  height: 60,
+                  alignment: Alignment.center,
+                  color: color.withValues(alpha: 0.3),
+                  child: Text(
+                    'child',
+                    style: TextStyle(
+                      color: color,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

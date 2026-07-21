@@ -13,6 +13,7 @@ dependencies:
   flutter_svg: ^2.2.3
   provider: ^6.1.5+1
   fading_edge_scrollview: ^4.1.1
+  material_color_utilities: ^0.11.1
   url_launcher:
     git:
       url: https://gitcode.com/CPF-Flutter/flutter_packages.git
